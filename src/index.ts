@@ -1,5 +1,5 @@
 import axios from 'axios';
-import ObfuscationResponse from './ObfuscationResponse';
+import { ObfuscationResponse } from './ObfuscationResponse';
 import { ObfuscationSettings } from './ObfuscationSettings';
 const prefix = 'https://astolfobrew.nora.lgbt';
 

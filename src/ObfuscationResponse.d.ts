@@ -1,4 +1,4 @@
-export default interface ObfuscationResponse {
+export interface ObfuscationResponse {
 	/**
 	 * @name success
 	 * @description if the operation was successful
