@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { ObfuscationResponse } from './ObfuscationResponse';
 import { ObfuscationSettings } from './ObfuscationSettings';
-const prefix = 'https://astolfobrew.nora.lgbt';
+const endpoint = 'https://astolfobrew.nora.lgbt';
 
 export const ObfuscateScript: (
 	Key: string,
@@ -23,7 +23,7 @@ export const ObfuscateScript: (
 	}
 ) => {
 	const response = await axios({
-		url: prefix + '/api/v1/obfuscate',
+		url: endpoint + '/api/v1/obfuscate',
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
 		data: JSON.stringify({
