@@ -1,28 +1,27 @@
 import axios from 'axios';
+import ObfuscationResponse from './ObfuscationResponse';
+import { ObfuscationSettings } from './ObfuscationSettings';
 const prefix = 'https://astolfobrew.nora.lgbt';
-
-export interface ObfuscationResponse {
-	/**
-	 * @name success
-	 * @description if the operation was successful
-	 */
-	success: true;
-	/**
-	 * @name output
-	 * @description outputted string
-	 */
-	output: string;
-	/**
-	 * @name completedIn
-	 * @description Time it took the server to obfuscate in milliseconds
-	 */
-	completedIn: number;
-}
 
 export const ObfuscateScript: (
 	Key: string,
 	Script: string
-) => Promise<ObfuscationResponse> = async (Key: string, Script: string) => {
+) => Promise<ObfuscationResponse> = async (
+	Key: string,
+	Script: string,
+	Settings: ObfuscationSettings = {
+		EncryptStrings: true,
+		EncryptImportantStrings: false,
+		BytecodeCompress: true,
+		ControlFlow: true,
+		DeadCodeInjection: false,
+		EnvFunctions: true,
+		Memes: true,
+		Mutate: true,
+		PreserveLineInfo: false,
+		SuperOperators: true,
+	}
+) => {
 	const response = await axios({
 		url: prefix + '/api/v1/obfuscate',
 		method: 'POST',
@@ -30,6 +29,7 @@ export const ObfuscateScript: (
 		data: JSON.stringify({
 			key: Key,
 			script: Script,
+			settings: Settings,
 		}),
 	});
 	const d = response.data;
