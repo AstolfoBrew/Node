@@ -1,6 +1,6 @@
 {
 	"name": "astolfobrew",
-	"version": "0.1.1",
+	"version": "0.2.0",
 	"description": "AstolfoBrew's NodeJS API",
 	"source": "src/index.ts",
 	"main": "dist/main.js",
