@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+		"rootDir": "src",
+		"outDir": "dist",
+		"moduleResolution": "node",
+		"lib": ["ES2015", "ES2016", "ES2017", "DOM"],
+		"target": "ES5",
+		"checkJs": false
+	}
+}

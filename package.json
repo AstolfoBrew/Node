@@ -1,0 +1,34 @@
+{
+	"name": "astolfobrew",
+	"version": "0.1.0",
+	"description": "AstolfoBrew's NodeJS API",
+	"source": "src/index.ts",
+	"main": "dist/main.js",
+	"module": "dist/module.js",
+	"types": "dist/types.d.ts",
+	"keywords": [
+		"Astolfo",
+		"AstolfoBrew",
+		"Obfuscation",
+		"Lua"
+	],
+	"author": "MokiyCodes <git@wafflepowered.com>",
+	"license": "MIT",
+	"devDependencies": {
+		"@babel/core": "^7.12.0",
+		"@parcel/core": "^2.0.1",
+		"@parcel/packager-ts": "^2.0.1",
+		"@parcel/transformer-typescript-types": "^2.0.1",
+		"@types/node": "^17.0.5",
+		"parcel": "^2.0.1",
+		"typescript": "^4.5.4"
+	},
+	"scripts": {
+		"watch": "parcel watch",
+		"build": "parcel build"
+	},
+	"dependencies": {
+		"@babel/preset-typescript": "^7.16.7",
+		"axios": "^0.24.0"
+	}
+}
