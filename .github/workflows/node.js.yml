@@ -18,6 +18,8 @@ jobs:
         node-version: [16.x, 17.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
+    env:
+      Key: ${{ secrets.ASTOLFO_KEY }}
     steps:
       - uses: actions/checkout@v2
       - name: Cache pnpm modules
@@ -35,9 +37,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
-        env:
-          Key: ${{ secrets.ASTOLFO_KEY }}
       - name: Install dependencies
         run: pnpm install
-      - run: npm run build
-      - run: npm test
+      - run: pnpm build
+      - run: pnpm test

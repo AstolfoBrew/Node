@@ -3,7 +3,9 @@ const fs = require('fs'),
 const { ObfuscationSettings } = AstolfoNode,
 	AstolfoInstance = AstolfoNode.Astolfo;
 const Settings = new ObfuscationSettings(); // Default Settings
-const Astolfo = new AstolfoInstance(process.env.Key);
+const Astolfo = new AstolfoInstance(
+	process.env.Key ?? process.argv[2] ?? process.argv[1]
+);
 
 (async () => {
 	// Obfuscate Script
