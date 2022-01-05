@@ -99,7 +99,8 @@ export const ObfuscationSettings = ObfSettings;
 
 export const ObfuscateScript: (
 	Key: string,
-	Script: string
+	Script: string,
+	Settings?: ObfSettings,
 ) => Promise<ObfuscationResponse> = async (
 	Key: string,
 	Script: string,
