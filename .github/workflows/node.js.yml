@@ -39,6 +39,5 @@ jobs:
           Key: ${{ secrets.ASTOLFO_KEY }}
       - name: Install dependencies
         run: pnpm install
-      - run: npm i
       - run: npm run build
       - run: npm test
