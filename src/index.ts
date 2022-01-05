@@ -153,7 +153,7 @@ const _ObfuscateScript: (
 	_endpoint?: string
 ) => {
 	const response = await axios({
-		url: _endpoint || endpoint + '/api/v1/obfuscate',
+		url: (_endpoint || endpoint) + '/api/v1/obfuscate',
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
 		data: JSON.stringify({
@@ -161,7 +161,9 @@ const _ObfuscateScript: (
 			script: Script,
 			settings: Settings,
 		}),
-	});
+	})
+		.then(v => v)
+		.catch(v => v);
 	const d = response.data;
 	if (!d.success)
 		throw new Error(
@@ -247,8 +249,10 @@ class _Astolfo {
 			.then(v => v)
 			.catch(v => v)
 			.then(v => v);
-		if (auth.data.status || auth.status !== 200)
-			throw new Error('Cannot get auth data!');
+		if (auth.data.status !== 200)
+			throw new Error(
+				'Cannot get auth data! Response:\n' + JSON.stringify(auth.data, null, 2)
+			);
 		if (auth.data.isAuthenticated !== true)
 			throw new Error('User Account is not authenticated!');
 		if (auth.data.isRateLimited !== false) throw new Error('Rate Limited!');
