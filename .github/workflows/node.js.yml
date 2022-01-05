@@ -28,6 +28,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
+        env:
+          Key: ${{ secrets.ASTOLFO_KEY }}
       - name: Install dependencies
         run: pnpm install
       - run: npm i

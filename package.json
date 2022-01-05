@@ -25,7 +25,8 @@
 	},
 	"scripts": {
 		"watch": "parcel watch",
-		"build": "parcel build"
+		"build": "parcel build",
+		"test": "node ./test.js"
 	},
 	"dependencies": {
 		"@babel/preset-typescript": "^7.16.7",
