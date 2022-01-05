@@ -19,7 +19,8 @@ export class ObfuscationSettings implements ObfuscationSettings {
 	/**
 	 * @param {Partial<ObfuscationSettings>} props Properties to write to the ObfuscationSettings Object
 	 */
-	constructor(props: Partial<ObfuscationSettings>) {
+	constructor(props?: Partial<ObfuscationSettings>) {
+		if (!props) return;
 		for (const k in props) {
 			const value = props[k];
 			if (typeof this[k] !== 'undefined') this[k] = value;
