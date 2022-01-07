@@ -1,3 +1,3 @@
 # AstolfoNode
 
-AstolfoNode is the official [AstolfoBrew](https://astolfobrew.nora.lgbt) NodeJS API.
+AstolfoNode is the official [AstolfoBrew](https://brew.astolfo.gay) NodeJS API.

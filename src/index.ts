@@ -93,14 +93,14 @@ export interface ObfuscationResponse {
 //
 import axios from 'axios';
 import { ObfuscationSettings as ObfSettings } from './ObfuscationSettings';
-const endpoint = 'https://astolfobrew.nora.lgbt';
+const endpoint = 'https://brew.astolfo.gay';
 
 export const ObfuscationSettings = ObfSettings;
 
 export const ObfuscateScript: (
 	Key: string,
 	Script: string,
-	Settings?: ObfSettings,
+	Settings?: ObfSettings
 ) => Promise<ObfuscationResponse> = async (
 	Key: string,
 	Script: string,
